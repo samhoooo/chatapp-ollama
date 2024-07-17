@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+     "target": "ESNext",
+     "module": "CommonJS",
+     "rootDir": "./",
+     "moduleResolution": "node",
+     "resolveJsonModule": true, /* in case you are importing JSON files */
+     "outDir": "./build",
+     "esModuleInterop": true,
+     "forceConsistentCasingInFileNames": true,
+     "strict": true,
+     "noImplicitAny": true,
+     "skipLibCheck": true,
+     "sourceMap": true,
+  }
+}

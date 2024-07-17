@@ -1,0 +1,28 @@
+.card {
+  margin: auto;
+  padding: 20px;
+  max-width: 80%;
+  min-height: 100%;
+  position: relative;
+}
+
+/* .chats {
+  margin-top: 48px;
+  max-height: 65vh;
+  min-height: 350px;
+  overflow: auto;
+}
+
+.message-box {
+  position: absolute;
+  bottom: 30px;
+} */
+
+@media screen and (max-width: 768px) {
+  .chatCardContent {
+    padding: 0px !important;
+  }
+  .card {
+    max-width: none;
+  }
+}
