@@ -1,13 +1,18 @@
 import { createContext, useMemo, useState, useCallback } from "react";
 import { AI_INITIAL_MESSAGE } from "../constant";
 
+export enum Role {
+  USER = "user",
+  AI = "ai",
+}
+
 type ChatContextValues = {
   messages: {
     from: string;
     text: string;
   }[];
   // eslint-disable-next-line no-unused-vars
-  setMessage: (message: string) => void;
+  setMessage: (message: string, role?: Role) => void;
 };
 
 export const ChatContext = createContext<ChatContextValues | null>(null);
@@ -24,10 +29,10 @@ export const ChatContextProvider = ({ children }: Props) => {
     },
   ]);
 
-  const setMessage = useCallback((message: string) => {
+  const setMessage = useCallback((message: string, role = Role.USER) => {
     setMessages((prevMessages) => [
       ...prevMessages,
-      { from: "user", text: message },
+      { from: role, text: message },
     ]);
   }, []);
 

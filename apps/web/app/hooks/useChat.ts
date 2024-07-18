@@ -1,5 +1,10 @@
 import { useContext } from "react";
-import { ChatContext } from "../context/chat";
+import { ChatContext, Role } from "../context/chat";
+
+type apiResponse = {
+  status: string;
+  message: string;
+};
 
 export const useChat = () => {
   const context = useContext(ChatContext);
@@ -11,7 +16,8 @@ export const useChat = () => {
   const { messages, setMessage } = context;
 
   const sendMessage = async (message: string) => {
-    // TODO: send message to the server
+    setMessage(message, Role.USER);
+    // send message to the server
     const response = await fetch("/api", {
       method: "POST",
       headers: {
@@ -19,8 +25,10 @@ export const useChat = () => {
       },
       body: JSON.stringify({ message }),
     });
-    console.log({ response });
-    setMessage(message);
+    const data: apiResponse = await response.json();
+    if (data.status === "success") {
+      setMessage(data.message, Role.AI);
+    }
   };
 
   return { messages, sendMessage };

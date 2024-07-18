@@ -12,7 +12,6 @@
     "@material-ui/core": "^4.12.4",
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.16.4",
-    "@repo/ui": "workspace:*",
     "next": "^14.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
