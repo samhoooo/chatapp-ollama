@@ -1,6 +1,7 @@
 import ChatHeader from "../ChatHeader";
 import ChatFooter from "../ChatFooter";
 import Conversation from "../Conversation";
+import ChatBody from "../ChatBody";
 
 import styles from "./Chatroom.module.css";
 
@@ -14,8 +15,10 @@ const Chatroom = () => {
         }}
         title="SamLLM"
       />
-      <Conversation />
-      <ChatFooter />
+      <ChatBody>
+        <Conversation />
+        <ChatFooter />
+      </ChatBody>
     </div>
   );
 };

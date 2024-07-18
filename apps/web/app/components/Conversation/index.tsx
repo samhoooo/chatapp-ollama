@@ -1,22 +1,28 @@
+"use client";
+
 import ChatMessage from "../ChatMessage";
+import { useChat } from "../../hooks";
 
 import styles from "./Conversation.module.css";
 
 const Conversation = () => {
+  const { messages } = useChat();
+
   return (
     <div className={styles.conversation}>
       <div>
-        <ChatMessage
-          avatar={"robot.png"}
-          side={"ai"}
-          message={{ id: "1", text: "Hello! How can I help you?" }}
-          key={"1"}
-        />
-        <ChatMessage
-          side={"human"}
-          message={{ id: "1", text: "Hello! How can I help you?" }}
-          key={"1"}
-        />
+        {messages.map((message) => {
+          if (message.from === "user") {
+            return <ChatMessage side={"user"} message={message.text} />;
+          }
+          return (
+            <ChatMessage
+              side={"ai"}
+              avatar={"robot.png"}
+              message={message.text}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -2,9 +2,9 @@ import { Avatar } from "../../utils/mui";
 import styles from "./ChatMessage.module.css";
 
 type Props = {
-  side?: "ai" | "human";
+  side?: "ai" | "user";
   avatar?: string;
-  message: { id: string; text: string };
+  message: string;
 };
 
 const ChatMessage = (props: Props) => {
@@ -13,9 +13,9 @@ const ChatMessage = (props: Props) => {
     <div
       className={side === "ai" ? styles.aiChatMessage : styles.humanChatMessage}
     >
-      {avatar && side === "ai" && <Avatar src={avatar} />}
-      <div className={styles.messageText} key={message.id}>
-        <div>{message.text}</div>
+      {avatar && <Avatar src={avatar} />}
+      <div className={styles.messageText}>
+        <div>{message}</div>
       </div>
     </div>
   );
