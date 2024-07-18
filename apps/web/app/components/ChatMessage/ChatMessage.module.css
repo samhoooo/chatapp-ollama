@@ -1,26 +1,28 @@
-.leftRow {
+.aiChatMessage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  justify-content: left;
+}
+
+.humanChatMessage {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
+  justify-content: right;
+}
+
+.messageText {
+  padding: 12px 24px;
+  border-radius: 25px;
+}
+
+.humanChatMessage .messageText {
+  background-color: #b0ff92;
+}
+
+.aiChatMessage .messageText {
   background-color: #f2f2f2;
-  margin-left: 4px;
-}
-
-.rightRow {
-  background-color: rgb(58, 101, 223);
-  color: white;
-  margin-right: 4px;
-}
-
-.chat {
-  border-radius: 24px;
-  width: fit-content;
-  height: fit-content;
-  padding: 8px 18px;
-  max-width: 50%;
-  word-wrap: break-word;
-  margin-bottom: 24px;
-}
-
-@media (max-width: 768px) {
-  .chat {
-    max-width: 60%;
-  }
 }

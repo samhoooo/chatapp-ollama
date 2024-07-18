@@ -1,0 +1,22 @@
+.footer {
+  padding: 18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background-color: #e0e1dd;
+  border-radius: 0 0 25px 25px;
+}
+
+.messageInput {
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    border-radius: 0;
+  }
+}

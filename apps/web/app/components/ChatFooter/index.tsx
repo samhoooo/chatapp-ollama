@@ -1,26 +1,30 @@
 "use client";
 
-import { Grid, Fab, TextField } from "../../utils/mui";
+import { Fab, TextField } from "../../utils/mui";
 import SendIcon from "@mui/icons-material/Send";
+
+import styles from "./ChatFooter.module.css";
 
 const ChatFooter = () => {
   return (
-    <Grid container className="message-box">
-      <Grid item xs={11}>
+    <div className={styles.footer}>
+      <div className={styles.messageInput}>
         <TextField
           id="outlined-basic-email"
           label="Message"
           fullWidth
           multiline
-          rows={2}
+          variant="outlined"
+          maxRows={4}
         />
-      </Grid>
-      <Grid item xs={1} direction="row" alignItems="center" justify="flex-end">
+      </div>
+
+      <div className={styles.sendButton}>
         <Fab color="primary" aria-label="add" size="small">
           <SendIcon />
         </Fab>
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   );
 };
 

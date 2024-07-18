@@ -1,4 +1,6 @@
-import { Container, Avatar, Grid } from "../../utils/mui";
+import { Avatar } from "../../utils/mui";
+
+import styles from "./ChatHeader.module.css";
 
 type Props = {
   avatar: {
@@ -10,16 +12,14 @@ type Props = {
 
 const ChatHeader = ({ avatar, title }: Props) => {
   return (
-    <Container>
-      <Grid container spacing={2} alignItems="center">
-        <Grid item xs={1}>
-          <Avatar alt={avatar.alt} src={avatar.src} />
-        </Grid>
-        <Grid item xs={10}>
-          <b>{title}</b>
-        </Grid>
-      </Grid>
-    </Container>
+    <div className={styles.header}>
+      <div className={styles.avatar}>
+        <Avatar alt={avatar.alt} src={avatar.src} />
+      </div>
+      <div className={styles.title}>
+        <b>{title}</b>
+      </div>
+    </div>
   );
 };
 

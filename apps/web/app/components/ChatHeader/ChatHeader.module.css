@@ -1,0 +1,16 @@
+.header {
+  background-color: #e0e1dd;
+  border-radius: 25px 25px 0 0;
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    border-radius: 0px;
+  }
+}

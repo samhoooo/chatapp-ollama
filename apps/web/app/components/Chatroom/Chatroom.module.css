@@ -1,28 +1,28 @@
-.card {
+.chatroom {
   margin: auto;
-  padding: 20px;
   max-width: 80%;
-  min-height: 100%;
+  height: 100%;
   position: relative;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
-/* .chats {
-  margin-top: 48px;
-  max-height: 65vh;
-  min-height: 350px;
-  overflow: auto;
-}
-
-.message-box {
-  position: absolute;
-  bottom: 30px;
-} */
 
 @media screen and (max-width: 768px) {
   .chatCardContent {
     padding: 0px !important;
   }
-  .card {
+  .chatroom {
     max-width: none;
+    border-radius: 0px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .chatroom {
+    max-width: 50%;
   }
 }
