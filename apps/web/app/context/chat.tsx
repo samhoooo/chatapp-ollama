@@ -38,14 +38,13 @@ export const ChatContextProvider = ({ children }: Props) => {
 
   const streamMessage = (chunk: string) => {
     setMessages((prev) => {
-      const messages = [...prev];
+      const messages = JSON.parse(JSON.stringify(prev));
       const lastMessage = messages[messages.length - 1];
       if (!lastMessage || lastMessage.from === Role.USER)
-        return [...messages, { from: Role.AI, text: chunk }];
+        return [...prev, { from: Role.AI, text: chunk }];
 
       lastMessage.text += chunk;
-      messages.pop();
-      return [...messages, lastMessage];
+      return [...messages.slice(0, -1), lastMessage];
     });
   };
 

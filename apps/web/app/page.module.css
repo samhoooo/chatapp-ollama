@@ -6,6 +6,7 @@ body {
   background-color: black;
   min-height: 100%;
   font-family: Arial, sans-serif;
+  color: black;
 }
 
 .chatroom {

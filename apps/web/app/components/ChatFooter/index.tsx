@@ -12,6 +12,7 @@ const ChatFooter = () => {
   const { sendMessage } = useChat();
 
   const onSubmitHandler = useCallback(() => {
+    if (message.trim().length < 1) return;
     sendMessage(message);
     setMessage("");
   }, [sendMessage, message]);
@@ -28,6 +29,12 @@ const ChatFooter = () => {
           maxRows={4}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          onKeyUp={(e) => {
+            e.preventDefault();
+            if (e.key === "Enter" && !e.shiftKey) {
+              onSubmitHandler();
+            }
+          }}
         />
       </div>
 
