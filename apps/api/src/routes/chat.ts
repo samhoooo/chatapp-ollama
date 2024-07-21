@@ -1,6 +1,5 @@
 import express from "express";
 import ollama from "ollama";
-import { pipeline } from "node:stream/promises";
 
 const router = express.Router();
 
@@ -15,7 +14,7 @@ router.post("/chat", async (req, res) => {
   res.setHeader("Transfer-Encoding", "chunked");
 
   const response = await ollama.chat({
-    model: "llama3",
+    model: process.env.OLLAMA_MODEL ?? "llama3",
     messages: [{ role: "user", content: body.message }],
     stream: true,
   });
