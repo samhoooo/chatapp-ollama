@@ -2,6 +2,11 @@
 
 This is an offline React chatbot application integrated with [Ollama](https://ollama.com/).
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/0d48694c-585a-43c9-9944-f8c1b10c3da8">
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/c12073fc-6d4b-4ee0-89fc-a96e2cb24ed1">
+
+
 ## Features
 
 - Next.js: React frontend to interact with the chatbot
