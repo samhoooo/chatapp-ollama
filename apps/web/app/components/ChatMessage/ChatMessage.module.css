@@ -29,3 +29,12 @@
 .aiChatMessage .messageText {
   background-color: #f2f2f2;
 }
+
+.aiChatMessage .messageText ul {
+  margin: 0;
+  padding: 0;
+}
+
+.aiChatMessage .messageText * {
+  padding: revert;
+}

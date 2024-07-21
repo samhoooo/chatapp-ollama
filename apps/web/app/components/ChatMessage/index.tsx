@@ -1,3 +1,4 @@
+import Markdown from "react-markdown";
 import { Avatar } from "../../utils/mui";
 import styles from "./ChatMessage.module.css";
 
@@ -15,7 +16,7 @@ const ChatMessage = (props: Props) => {
     >
       {avatar && <Avatar src={avatar} />}
       <div className={styles.messageText}>
-        <div>{message}</div>
+        <Markdown>{message}</Markdown>
       </div>
     </div>
   );
