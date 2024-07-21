@@ -1,80 +1,65 @@
-# Turborepo starter
+# Chatbot App with Ollama
 
-This is an official starter Turborepo.
+This is an offline React chatbot application integrated with [Ollama](https://ollama.com/).
 
-## Using this example
+## Features
+
+- Next.js: React frontend to interact with the chatbot
+- Node.js: Backend integrated with [Ollama API](https://www.npmjs.com/package/ollama)
+- Turborepo: Monorepo to include the above frontend and backend and work seamlessly together
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js >= 18](https://nodejs.org/en/download/package-manager)
+- [pnpm](https://pnpm.io/)
+- [Ollama](https://ollama.com/)
+
+### Installation
 
 Run the following command:
 
 ```sh
-npx create-turbo@latest
+pnpm install
 ```
 
-## What's inside?
+### Environment variable
 
-This Turborepo includes the following packages/apps:
+Set up the following .env files, based on the template in .env.example
 
-### Apps and Packages
+- `apps/api/.env`
+- `apps/web/.env`
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### Running the Development Server
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+This monorepo uses Turborepo to manage the two packages (api, web).
 
-### Utilities
+To start all packages run:
 
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
+```sh
 pnpm dev
 ```
 
-### Remote Caching
+By default, the packages serve at the following endpoints:
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+- Web: http://localhost:3000
+- API: http://localhost:8080
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+### Building the Project
 
-```
-cd my-turborepo
-npx turbo login
-```
+Build all apps and packages:
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
+```sh
+pnpm build
 ```
 
-## Useful Links
+## License
 
-Learn more about the power of Turborepo:
+This project is licensed under the MIT License.
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+## Contact
+
+For any questions, please open an issue in the repository.
