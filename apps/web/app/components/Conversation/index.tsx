@@ -18,7 +18,7 @@ const Conversation = () => {
           return (
             <ChatMessage
               side={"ai"}
-              avatar={"robot.png"}
+              avatar={"ollama.png"}
               message={message.text}
             />
           );

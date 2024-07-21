@@ -10,10 +10,10 @@ const Chatroom = () => {
     <div className={styles.chatroom}>
       <ChatHeader
         avatar={{
-          alt: "User Avatar",
-          src: "user.png",
+          alt: "Ollama Avatar",
+          src: "ollama.png",
         }}
-        title="SamLLM"
+        title="Llama 3"
       />
       <ChatBody>
         <Conversation />
