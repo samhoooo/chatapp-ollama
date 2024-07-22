@@ -2,7 +2,9 @@
 
 This is an offline React chatbot application integrated with [Ollama](https://ollama.com/).
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/0d48694c-585a-43c9-9944-f8c1b10c3da8">
+![demo](https://github.com/user-attachments/assets/00ba49ed-39d5-42eb-8191-ed48fe850c1a)
+
+
 
 ## Features
 
