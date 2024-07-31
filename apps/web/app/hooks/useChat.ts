@@ -9,10 +9,13 @@ export const useChat = () => {
     throw new Error("useChat must be used within a ChatContextProvider");
   }
 
-  const { messages, setMessage, streamMessage } = context;
+  const { messages, setMessage, streamMessage, isLoading, setIsLoading } =
+    context;
 
   const sendMessage = async (message: string) => {
     setMessage(message, Role.USER);
+    setIsLoading(true);
+
     // send message to the server
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_PATH}/api/chat`,
@@ -25,6 +28,8 @@ export const useChat = () => {
         body: JSON.stringify({ message }),
       }
     );
+
+    setIsLoading(false);
 
     if (!response.ok || !response.body) {
       throw response.statusText;
@@ -42,5 +47,5 @@ export const useChat = () => {
     }
   };
 
-  return { messages, sendMessage };
+  return { messages, sendMessage, isLoading };
 };

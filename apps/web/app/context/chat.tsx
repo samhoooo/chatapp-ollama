@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createContext, useMemo, useState, useCallback } from "react";
 import { AI_INITIAL_MESSAGE } from "../constant";
 
@@ -13,6 +14,8 @@ type ChatContextValues = {
   }[];
   setMessage: (message: string, role?: Role) => void;
   streamMessage: (chunk: string) => void;
+  isLoading: boolean;
+  setIsLoading: (isLoading: boolean) => void;
 };
 
 export const ChatContext = createContext<ChatContextValues | null>(null);
@@ -22,6 +25,7 @@ type Props = {
 };
 
 export const ChatContextProvider = ({ children }: Props) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<ChatContextValues["messages"]>([
     {
       from: "ai",
@@ -53,8 +57,10 @@ export const ChatContextProvider = ({ children }: Props) => {
       messages,
       setMessage,
       streamMessage,
+      isLoading,
+      setIsLoading,
     }),
-    [messages, setMessage, streamMessage]
+    [messages, setMessage, streamMessage, isLoading, setIsLoading]
   );
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;
