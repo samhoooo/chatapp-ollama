@@ -2,4 +2,4 @@
 
 "use client";
 
-export { Fab, TextField, Avatar } from "@material-ui/core";
+export { Fab, TextField, Avatar, LinearProgress } from "@material-ui/core";

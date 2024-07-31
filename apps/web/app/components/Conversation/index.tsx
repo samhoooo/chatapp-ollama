@@ -1,12 +1,13 @@
 "use client";
 
 import ChatMessage from "../ChatMessage";
+import ChatLoading from "../ChatLoading";
 import { useChat } from "../../hooks";
 
 import styles from "./Conversation.module.css";
 
 const Conversation = () => {
-  const { messages } = useChat();
+  const { messages, isLoading } = useChat();
 
   return (
     <div className={styles.conversation} role="table">
@@ -23,6 +24,7 @@ const Conversation = () => {
             />
           );
         })}
+        {isLoading && <ChatLoading avatar={"ollama.png"} />}
       </div>
     </div>
   );
