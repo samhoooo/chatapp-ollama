@@ -9,8 +9,8 @@ const Conversation = () => {
   const { messages } = useChat();
 
   return (
-    <div className={styles.conversation}>
-      <div>
+    <div className={styles.conversation} role="table">
+      <div role="rowgroup">
         {messages.map((message) => {
           if (message.from === "user") {
             return <ChatMessage side={"user"} message={message.text} />;

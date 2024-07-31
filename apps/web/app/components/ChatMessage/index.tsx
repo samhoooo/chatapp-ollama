@@ -13,6 +13,7 @@ const ChatMessage = (props: Props) => {
   return (
     <div
       className={side === "ai" ? styles.aiChatMessage : styles.humanChatMessage}
+      role="row"
     >
       {avatar && <Avatar src={avatar} />}
       <div className={styles.messageText}>
